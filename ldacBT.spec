@@ -1,4 +1,7 @@
-%global libname libldac2
+%define libname %mklibname ldac %{major}
+%define develname %mklibname ldac -d
+
+#global libname libldac2
 Name:           ldacBT
 Version:        2.0.2.3
 Release:        1
@@ -15,12 +18,12 @@ LDAC is an audio coding technology developed by Sony.
 It enables the transmission of High-Resolution Audio content,
 even over a Bluetooth connection.
 
-%package devel
+%package -n %{develname}
 Summary:        Development files for %{name}
 Group:          Development/Libraries/C and C++
-Requires:       %{libname} = %{version}
+Requires:	%{libname} = %{version}-%{release}
 
-%description devel
+%description -n %{develname}
 The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
 
@@ -34,7 +37,7 @@ It enables the transmission of High-Resolution Audio content,
 even over a Bluetooth connection.
 
 %prep
-%autosetup -n %{name}
+%autosetup -n %{name} -p1
 
 %build
 %cmake \
@@ -46,15 +49,12 @@ even over a Bluetooth connection.
 %install
 %make_install -C build
 
-%post -n %{libname} -p /sbin/ldconfig
-%postun -n %{libname} -p /sbin/ldconfig
-
 %files -n %{libname}
 %license LICENSE
 %{_libdir}/libldacBT_abr.so.*
 %{_libdir}/libldacBT_enc.so.*
 
-%files devel
+%files -n %{develname}
 %dir %{_includedir}/ldac
 %{_includedir}/ldac/ldacBT_abr.h
 %{_includedir}/ldac/ldacBT.h
