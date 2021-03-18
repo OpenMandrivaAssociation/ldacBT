@@ -1,6 +1,8 @@
 %define libname %mklibname ldac %{major}
 %define develname %mklibname ldac -d
 
+%define major 2
+
 #global libname libldac2
 Name:           ldacBT
 Version:        2.0.2.3
