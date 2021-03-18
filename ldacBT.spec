@@ -3,7 +3,6 @@
 
 %define major 2
 
-#global libname libldac2
 Name:           ldacBT
 Version:        2.0.2.3
 Release:        1
@@ -12,7 +11,6 @@ License:        Apache-2.0
 Group:          Productivity/Multimedia/Sound/Utilities
 URL:            https://github.com/EHfive/ldacBT
 Source0:        https://github.com/EHfive/ldacBT/releases/download/v%{version}/%{name}-%{version}.tar.gz
-#Source1:        baselibs.conf
 BuildRequires:  cmake
 
 %description
