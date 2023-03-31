@@ -5,7 +5,7 @@
 
 Name:           ldacBT
 Version:        2.0.2.3
-Release:        1
+Release:        2
 Summary:        A lossy audio codec for Bluetooth connections
 License:        Apache-2.0
 Group:          Productivity/Multimedia/Sound/Utilities
